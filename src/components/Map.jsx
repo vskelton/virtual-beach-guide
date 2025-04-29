@@ -6,16 +6,17 @@ const containerStyle = {
   height: "400px",
 };
 
-const center = {
+const defaultCenter = {
   lat: 25.7617,
-  lng:-80.1918,
+  lng: -80.1918,
 };
 
-function Map() {
+function Map({ selectedCoordinates }) {
+
   return (
     <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
-        <Marker position={center} />
+      <GoogleMap mapContainerStyle={containerStyle} center={selectedCoordinates || defaultCenter} zoom={10}>
+        <Marker position={selectedCoordinates || defaultCenter} />
       </GoogleMap>
     </LoadScript>
   );
