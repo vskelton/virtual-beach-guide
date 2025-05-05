@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import StarRating from './StarRating';
 
 function ReviewForm({ beachId, onReviewSubmit }) {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
+
+  const handleRatingChange = (newRating) => {
+    setRating(newRating);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,19 +34,11 @@ function ReviewForm({ beachId, onReviewSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div className='review-form'>
         <label htmlFor="rating">Rating:</label>
-        {/* You can implement a star rating component here */}
-        <input
-          type="number"
-          id="rating"
-          min="1"
-          max="5"
-          value={rating}
-          onChange={(e) => setRating(parseInt(e.target.value))}
-        />
+        <StarRating onRatingChange={handleRatingChange} />
       </div>
-      <div>
+      <div className='review-form'>
         <label htmlFor="comment">Review:</label>
         <textarea
           id="comment"
@@ -50,7 +47,9 @@ function ReviewForm({ beachId, onReviewSubmit }) {
           onChange={(e) => setComment(e.target.value)}
         />
       </div>
-      <button type="submit">Submit Review</button>
+      <div className='button-container'>
+        <button type="submit">Submit Review</button>
+      </div>
     </form>
   );
 }

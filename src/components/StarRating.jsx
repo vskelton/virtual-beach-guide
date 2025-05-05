@@ -11,11 +11,11 @@ function StarRating({ initialRating = 0, onRatingChange }) {
     <div className="star-rating">
       {[1, 2, 3, 4, 5].map((star) => (
         <span
-        key={star}
-        className={star <= rating ? 'filled' : 'empty'}
-        onClick={() => handleStarClick(star)}
+          key={star}
+          className={star <= rating ? 'filled' : 'empty'}
+          onClick={() => handleStarClick(star)}
         >
-         &#9733 
+          &#9733;
         </span>
       ))}
     </div>

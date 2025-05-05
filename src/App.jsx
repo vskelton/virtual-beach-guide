@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Map from "./components/Map";
 import BeachCard from "./components/BeachCard";
-//import ReviewForm from "./components/ReviewForm";
+import ReviewForm from "./components/ReviewForm";
 import "./App.css";
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
       <h1>Welcome to the Virtual Beach Guide</h1>
       <Map selectedCoordinates={selectedCoordinates}/>
       <BeachCard setSelectedCoordinates={setSelectedCoordinates} />
+      <ReviewForm />
       <div className="footer">
         <p></p>
       </div>

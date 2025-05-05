@@ -27,3 +27,17 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
+
+.review-form {
+  font-family: Poppins, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;;
+}
+
+.button-container{
+  width: 150px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 0 auto;
+}
