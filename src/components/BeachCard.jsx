@@ -108,7 +108,7 @@ const BeachCard = ({ setSelectedCoordinates }) => {
   const matchingBeach = beaches.find(beach =>
     beach.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  
+
 
   const handleSearch = (e) => {
     const term = e.target.value;
@@ -124,25 +124,26 @@ const BeachCard = ({ setSelectedCoordinates }) => {
   };
 
   return (
-    <div>
+    <div className='beach-card'>
       <input
         type="text"
         placeholder="Search for a beach..."
         value={searchTerm}
         onChange={handleSearch}
       />
-      
+
       {matchingBeach ? (
         <div>
           <h2>{matchingBeach.name}</h2>
           <p>{matchingBeach.location}</p>
           <p>{matchingBeach.description}</p>
-          <ul>
+          <ul className='activities-list'>
+            <h3>Activities:</h3>
             {matchingBeach.activities.map((activity, index) => (
               <li key={index}>{activity}</li>
             ))}
           </ul>
-          </div>
+        </div>
       ) : (
         <p>No Beach Found. Try another name!</p>
       )}
